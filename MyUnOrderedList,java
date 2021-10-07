@@ -1,0 +1,81 @@
+/**
+NAME: VEQUIZO, ULYSSES N.
+EDP CODE: 15479 DATA STRUCTURES 
+TIME: 5:00 - 8:00 MW
+INSTRUCTOR: Mrs. Emelie Villaren
+
+PRELIM ACTIVITY NO.2
+*/
+import java.util.*;
+
+public class MyUnOrderedList extends MyArrayList{
+      
+    int [] element;
+    int count;
+    
+    public MyUnOrderedList(int size)
+    {
+        element = new int[size];
+        count = 0;
+    }
+    
+    public MyUnOrderedList(){
+        
+        this(10);
+    }
+    
+
+    public void add(int item){
+        if(!isFound(item)){
+        addLast(item);
+    }
+        addLast(item);
+        }
+    
+    public void addLast(int number){
+        if(!isFull())
+        element[count++] = number;
+    }
+    
+    public int getPosition(int number){
+        
+        if(!isEmpty())
+        return number;
+        else return -1;
+    }
+    
+    
+   public void remove(int item){
+     int temp = 0;
+     for(int i = 0; i<item; i++){
+      temp = getPosition(item);
+      if(temp==item){
+        removeLast();
+      }
+     }
+   }
+   
+//  public String toString(){
+      
+     //  StringBuffer sb = new StringBuffer();
+     //  sb.append("{ ");
+     //  for(int 1 = 0; i < count; i++)
+     //  sb.append(element[i] + "");
+     //  sb.append("} ");
+     //  return sb.toString();
+      
+ //  }
+    
+    public static void main(String [] args){
+        
+        MyUnOrderedList list = new MyUnOrderedList();
+        list.addLast();
+        list.addLast();
+        list.addLast();
+        list.addLast();
+        list.addLast();
+        list.addLast();
+        //System.out.println("example:" + list);
+        
+    }
+}
